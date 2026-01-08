@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Countdown.css";
+import Digit from "./Digit";
 
 function Countdown({ onBirthdayReached, birthdayReached }) {
   const [time, setTime] = useState({ hours: 0, minutes: 0, seconds: 0 });
@@ -12,6 +13,7 @@ function Countdown({ onBirthdayReached, birthdayReached }) {
   useEffect(() => {
     if (birthdayReached) return;
 
+    // 🎂 10 JAN midnight (India time)
     const targetDate = new Date("2026-01-10T00:00:00");
 
     const updateCountdown = () => {
@@ -40,20 +42,11 @@ function Countdown({ onBirthdayReached, birthdayReached }) {
     <section className="countdown">
       <div className="flip-timer">
         <Digit value={time.hours} label="Hours" prevValue={prevTime.hours} />
-        <Digit
-          value={time.minutes}
-          label="Minutes"
-          prevValue={prevTime.minutes}
-        />
-        <Digit
-          value={time.seconds}
-          label="Seconds"
-          prevValue={prevTime.seconds}
-        />
+        <Digit value={time.minutes} label="Minutes" prevValue={prevTime.minutes} />
+        <Digit value={time.seconds} label="Seconds" prevValue={prevTime.seconds} />
       </div>
     </section>
   );
 }
 
 export default Countdown;
-

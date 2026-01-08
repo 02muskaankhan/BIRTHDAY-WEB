@@ -27,7 +27,7 @@ function App() {
   // ✅ FOR TESTING: Uncomment this line to always show countdown on reload
   // const [birthdayReached, setBirthdayReached] = useState(false);
 
-  const [showEffects, setShowEffects] = useState(false);
+ 
 
   const page1Ref = useRef(null); // Countdown page
   const page2Ref = useRef(null); // Celebration Page
